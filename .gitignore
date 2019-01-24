@@ -284,4 +284,5 @@ damstagram/media/
 
 .pytest_cache/
 
-
+### DB Info 
+dbinfo.py

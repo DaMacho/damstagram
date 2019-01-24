@@ -3,6 +3,7 @@ Base settings to build other settings files upon.
 """
 
 import environ
+from .dbinfo import Id, Pwd
 
 ROOT_DIR = environ.Path(__file__) - 3  # (damstagram/config/settings/base.py - 3 = damstagram/)
 APPS_DIR = ROOT_DIR.path('damstagram')
@@ -39,7 +40,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres://localhost/damstagram'),
+    'default': env.db('DATABASE_URL', default='postgres://'+Id+':'+Pwd+'@localhost:5432/damstagram'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -63,7 +64,7 @@ DJANGO_APPS = [
     'django.contrib.admin',
 ]
 THIRD_PARTY_APPS = [
-    'crispy_forms',
+    # 'crispy_forms',  # Form layouts
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -72,6 +73,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'damstagram.users.apps.UsersAppConfig',
     # Your stuff: custom apps go here
+    'damstagram.images.apps.ImagesConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
