@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.conf.urls import url
 from django.urls import include, path
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -19,6 +20,7 @@ urlpatterns = [
         "users/",
         include("damstagram.users.urls", namespace="users"),
     ),
+    url(r'^images/', include("damstagram.images.urls", namespace='images')),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
 ] + static(
