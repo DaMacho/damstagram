@@ -19,11 +19,15 @@ class Image(TimeStampedModel):
     file = models.ImageField()
     location = models.CharField(max_length=140)
     caption = models.TextField()
-    creator = models.ForeignKey(user_models.User, on_delete=models.CASCADE, null=True)
+    creator = models.ForeignKey(
+        user_models.User, on_delete=models.CASCADE, null=True, related_name='images')
     # comment_set (look in all the comments for the ones that have 'image' = id)
 
     def __str__(self):
         return '{} - {}'.format(self.location, self.caption)
+
+    class Meta:
+        ordering = ['-created_at']   # order by from newest one
 
 
 class Comment(TimeStampedModel):
