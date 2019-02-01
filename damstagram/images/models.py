@@ -23,6 +23,10 @@ class Image(TimeStampedModel):
         user_models.User, on_delete=models.CASCADE, null=True, related_name='images')
     # comment_set (look in all the comments for the ones that have 'image' = id)
 
+    @property
+    def like_count(self):
+        return self.likes.all().count()
+
     def __str__(self):
         return '{} - {}'.format(self.location, self.caption)
 
