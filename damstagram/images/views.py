@@ -28,42 +28,50 @@ class Feed(APIView):
         return Response(serializer.data)
 
 
+class LikeImage(APIView):
+
+    def get(self, request, image_id, format=None):
+        
+        return Response(status=200)
+
+
+
 
 
 
 # these classes are only for test to who all images. In real, this is not acceptable. The server will blow up.
-class ListAllImages(APIView):
+# class ListAllImages(APIView):
 
-    def get(self, request, format=None):
-        """
-        request: request object from client, such as get, post, delete.
-        format: ex) json, xml, and etc. default is None.
-        """
+#     def get(self, request, format=None):
+#         """
+#         request: request object from client, such as get, post, delete.
+#         format: ex) json, xml, and etc. default is None.
+#         """
 
-        all_images = models.Image.objects.all()
-        serializer = serializers.ImageSerializer(all_images, many=True)
+#         all_images = models.Image.objects.all()
+#         serializer = serializers.ImageSerializer(all_images, many=True)
 
-        return Response(data=serializer.data)
-
-
-class ListAllComments(APIView):
-
-    def get(self, request, format=None):
-
-        user_id = request.user.id
-
-        # all_comments = models.Comment.objects.all()
-        all_comments = models.Comment.objects.filter(creator=user_id)
-        serializer = serializers.CommentSerializer(all_comments, many=True)
-
-        return Response(data=serializer.data)
+#         return Response(data=serializer.data)
 
 
-class ListAllLikes(APIView):
+# class ListAllComments(APIView):
 
-    def get(self, request, format=None):
+#     def get(self, request, format=None):
 
-        all_likes = models.Like.objects.all()
-        serializer = serializers.LikeSerializer(all_likes, many=True)
+#         user_id = request.user.id
 
-        return Response(data=serializer.data)
+#         # all_comments = models.Comment.objects.all()
+#         all_comments = models.Comment.objects.filter(creator=user_id)
+#         serializer = serializers.CommentSerializer(all_comments, many=True)
+
+#         return Response(data=serializer.data)
+
+
+# class ListAllLikes(APIView):
+
+#     def get(self, request, format=None):
+
+#         all_likes = models.Like.objects.all()
+#         serializer = serializers.LikeSerializer(all_likes, many=True)
+
+#         return Response(data=serializer.data)
