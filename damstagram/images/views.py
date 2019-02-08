@@ -31,6 +31,8 @@ class Feed(APIView):
 class LikeImage(APIView):
 
     def get(self, request, image_id, format=None):
+
+        print(image_id)
         
         return Response(status=200)
 
@@ -38,7 +40,7 @@ class LikeImage(APIView):
 
 
 
-
+###############################
 # these classes are only for test to who all images. In real, this is not acceptable. The server will blow up.
 # class ListAllImages(APIView):
 
