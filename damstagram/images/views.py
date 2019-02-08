@@ -31,7 +31,7 @@ class Feed(APIView):
 
 class LikeImage(APIView):
 
-    def get(self, request, image_id, format=None):
+    def post(self, request, image_id, format=None):
 
         user = request.user
 
@@ -89,6 +89,20 @@ class CommentOnImage(APIView):
 
         else:
             return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class Comment(APIView):
+
+    def delete(self, request, comment_id, format=None):
+
+        user = request.user
+
+        try:
+            comment = models.Comment.objects.get(id=comment_id, creator=user)
+            comment.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except models.Comment.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
 
 
 
