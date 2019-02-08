@@ -1,16 +1,31 @@
-from django.urls import path
+from django.conf.urls import url
+from . import views
 
-from damstagram.users.views import (
-    user_list_view,
-    user_redirect_view,
-    user_update_view,
-    user_detail_view,
-)
 
 app_name = "users"
 urlpatterns = [
-    path("", view=user_list_view, name="list"),
-    path("~redirect/", view=user_redirect_view, name="redirect"),
-    path("~update/", view=user_update_view, name="update"),
-    path("<str:username>/", view=user_detail_view, name="detail"),
+    url(
+        regex=r'^explore/$',
+        view=views.ExploreUsers.as_view(),
+        name='explore_users'
+    ),
 ]
+
+
+# preset by cookiecutter
+# from django.urls import path
+
+# from damstagram.users.views import (
+#     user_list_view,
+#     user_redirect_view,
+#     user_update_view,
+#     user_detail_view,
+# )
+
+# app_name = "users"
+# urlpatterns = [
+#     path("", view=user_list_view, name="list"),
+#     path("~redirect/", view=user_redirect_view, name="redirect"),
+#     path("~update/", view=user_update_view, name="update"),
+#     path("<str:username>/", view=user_detail_view, name="detail"),
+# ]
