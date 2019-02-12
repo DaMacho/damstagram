@@ -18,6 +18,26 @@ class ExploreUsers(APIView):
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
+class FollowUser(APIView):
+
+    def post(self, request, user_id, format=None):
+
+        # find myself
+        user = request.user
+
+        try:
+            user_to_follow = models.User.objects.get(id=user_id)
+        except models.User.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        user.following.add(user_to_follow)
+
+        user.save()
+
+        return Response(status=status.HTTP_200_OK)
+
+
+
 
 
 
