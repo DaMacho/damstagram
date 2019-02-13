@@ -31,7 +31,8 @@ urlpatterns = [
     ),
     url(
         regex=r'^(?P<username>\w+)/following/$',
-        view=views.UserFollowing.as_view(),
+        view=views.UserFollowing.as_view(),     # use if view is class based
+        # view= views.UserFollowing,            # use if view is function based
         name='user_following'
     ),
 ]

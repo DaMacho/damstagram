@@ -102,6 +102,21 @@ class UserFollowing(APIView):
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
+# an example of Function Based View
+# def UserFollowingFBV(request, username):
+#     if request.method == 'GET':
+#         try:
+#             found_user = models.User.objects.get(username=username)
+#         except models.User.DoesNotExist:
+#             return Response(status=status.HTTP_404_NOT_FOUND)
+#         user_following = found_user.following.all()
+#         serializer = serializers.ListUserSerializer(user_following, many=True)
+#         return Response(data=serializer.data, status=status.HTTP_200_OK)
+#     elif request.method == 'POST':
+#         request.POST.get('key', value)
+#         pass
+
+
 
 
 
