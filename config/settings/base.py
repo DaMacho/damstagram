@@ -69,6 +69,7 @@ THIRD_PARTY_APPS = [
     'allauth.account',  #registration
     'allauth.socialaccount',  #registration
     'rest_framework',  # REST framework
+    'taggit',   # Tags for the photos
 ]
 LOCAL_APPS = [
     'damstagram.users.apps.UsersAppConfig',

@@ -1,4 +1,5 @@
 from django.db import models
+from taggit.managers import TaggableManager
 from damstagram.users import models as user_models
 
 # Create your models here.
@@ -21,6 +22,7 @@ class Image(TimeStampedModel):
     caption = models.TextField()
     creator = models.ForeignKey(
         user_models.User, on_delete=models.CASCADE, null=True, related_name='images')
+    tags = TaggableManager()
     # comment_set (look in all the comments for the ones that have 'image' = id)
 
     @property
