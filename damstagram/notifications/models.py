@@ -16,3 +16,4 @@ class Notification(image_models.TimeStampedModel):
     notification_to = models.ForeignKey(user_models.User, on_delete=models.CASCADE, related_name='note_to')
     notification_type = models.CharField(max_length=20, choices=TYPE_CHOICES)
     notification_image = models.ForeignKey(image_models.Image, on_delete=models.CASCADE, null=True, blank=True)
+    notification_comment = models.TextField(null=True, blank=True)

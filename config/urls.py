@@ -21,6 +21,7 @@ urlpatterns = [
         include("damstagram.users.urls", namespace="users"),
     ),
     url(r'^images/', include("damstagram.images.urls", namespace='images')),
+    url(r'^notifications/', include("damstagram.notifications.urls", namespace='notifications')),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
 ] + static(
