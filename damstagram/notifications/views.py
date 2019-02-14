@@ -15,3 +15,18 @@ class Notifications(APIView):
         serializer = serializers.NotificationSerializer(notifications, many=True)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+
+def create_notification(note_from, note_to, note_type, image=None, comment=None):
+
+    print(note_from, note_to, note_type, image, comment)
+
+    notification = models.Notification.objects.create(
+        notification_from=note_from,
+        notification_to=note_to,
+        notification_type=note_type,
+        notification_image=image,
+        notification_comment=comment
+    )
+
+    notification.save()
