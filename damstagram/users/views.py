@@ -97,8 +97,6 @@ class UserProfile(APIView):
         else:
             serializer = serializers.UserProfileSerializer(found_user, data=request.data, partial=True)
 
-            print(serializer)
-
             if serializer.is_valid():
                 
                 serializer.save()
