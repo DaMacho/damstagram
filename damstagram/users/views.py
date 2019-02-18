@@ -156,6 +156,53 @@ class Search(APIView):
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
+class ChangePassword(APIView):
+    
+    def put(self, request, username, format=None):
+
+        user = request.user
+
+        # check the requesting user is valid user(user of url.)
+        if user.username == username:
+
+            current_password = request.data.get('current_password', None)
+
+            # check whether current password is valid
+            if current_password is not None:
+
+                password_match = user.check_password(current_password)
+
+                # get new password
+                if password_match:
+
+                    new_password = request.data.get('new_password', None)
+
+                    # set new password
+                    if new_password is not None:
+
+                        user.set_password(new_password)
+
+                        user.save()
+
+                        print("Change is valid.")
+                        return Response(status=status.HTTP_200_OK)
+                    
+                    else:
+                        print("Error in new_password.")
+                        return Response(status=status.HTTP_400_BAD_REQUEST)
+
+                else:
+                    print("--- Permission Denied ---\nCheck the current password again.")
+                    return Response(status=status.HTTP_400_BAD_REQUEST)
+
+            else:
+                print("Pleas put the current password.")
+                return Response(status=status.HTTP_400_BAD_REQUEST)
+
+        else:
+            print("Unauthrized user")
+            return Response(status=status.HTTP_401_UNAUTHORIZED)
+
 # an example of Function Based View
 # def UserFollowingFBV(request, username):
 #     if request.method == 'GET':
