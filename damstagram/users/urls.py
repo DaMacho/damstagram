@@ -45,6 +45,11 @@ urlpatterns = [
         view=views.ChangePassword.as_view(),
         name='change_passwork'
     ),
+    # url(r'^rest-auth/facebook/$', views.FacebookLogin.as_view(), name='fb_login'),
+    # below is for testing FB access token
+    url(regex=r'^login/facebook/$', 
+    view=views.FacebookLogin.as_view(), 
+    name='fb_login'),
 ]
 
 

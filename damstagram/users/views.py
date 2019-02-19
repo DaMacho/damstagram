@@ -6,6 +6,9 @@ from rest_framework import status
 from . import models, serializers
 from damstagram.notifications import views as notification_views
 
+from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
+from rest_auth.registration.views import SocialLoginView
+
 
 # new lines
 class ExploreUsers(APIView):
@@ -202,6 +205,13 @@ class ChangePassword(APIView):
         else:
             print("Unauthrized user")
             return Response(status=status.HTTP_401_UNAUTHORIZED)
+
+
+class FacebookLogin(SocialLoginView):
+    adapter_class = FacebookOAuth2Adapter
+
+
+
 
 # an example of Function Based View
 # def UserFollowingFBV(request, username):

@@ -68,6 +68,7 @@ THIRD_PARTY_APPS = [
     'allauth',  #registration
     'allauth.account',  #registration
     'allauth.socialaccount',  #registration
+    'allauth.socialaccount.providers.facebook',  #registration
     'rest_framework',  # REST framework
     'rest_framework.authtoken',   #TODO : May cause conflict with JWT token
     'taggit',  # Tags for the photos
