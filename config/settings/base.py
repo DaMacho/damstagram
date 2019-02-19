@@ -69,8 +69,11 @@ THIRD_PARTY_APPS = [
     'allauth.account',  #registration
     'allauth.socialaccount',  #registration
     'rest_framework',  # REST framework
-    'taggit',   # Tags for the photos
+    'rest_framework.authtoken',   #TODO : May cause conflict with JWT token
+    'taggit',  # Tags for the photos
     'taggit_serializer', # Tag serializer
+    'rest_auth',  # rest auth
+    'rest_auth.registration',  # enable registration 
 ]
 LOCAL_APPS = [
     'damstagram.users.apps.UsersAppConfig',
@@ -97,10 +100,11 @@ AUTHENTICATION_BACKENDS = [
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
 AUTH_USER_MODEL = 'users.User'
+# TODO : Not use cuz of using rest-auth
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
-LOGIN_REDIRECT_URL = 'users:redirect'
+# LOGIN_REDIRECT_URL = 'users:redirect'
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-url
-LOGIN_URL = 'account_login'
+# LOGIN_URL = 'account_login'
 
 # PASSWORDS
 # ------------------------------------------------------------------------------
@@ -244,9 +248,9 @@ ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_REQUIRED = False  #TODO : made F to use rest-auth
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'  #TODO : made 'mandatory' to 'none' to use rest-auth
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_ADAPTER = 'damstagram.users.adapters.AccountAdapter'
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
@@ -261,7 +265,14 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
+        # to use rest-auth
+        # 'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.BasicAuthentication',
     ),
 }
+
+REST_USE_JWT = True
+
+# TODO : Technically should not be allowed to logout and change DB by GET. 
+# Cuz if logout and changing shape of DB should be followed by POST.
+ACCOUNT_LOGOUT_ON_GET = True
