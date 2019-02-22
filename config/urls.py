@@ -6,6 +6,8 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from rest_framework_jwt.views import obtain_jwt_token
+from damstagram import views
+
 
 urlpatterns = [
     # written by cookiecutter
@@ -30,6 +32,7 @@ urlpatterns = [
     url(r'^notifications/', include("damstagram.notifications.urls", namespace='notifications')),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    url(r'^', views.ReactAppView.as_view()),
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )

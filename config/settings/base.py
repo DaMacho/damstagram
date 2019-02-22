@@ -75,6 +75,7 @@ THIRD_PARTY_APPS = [
     'taggit_serializer', # Tag serializer
     'rest_auth',  # rest auth
     'rest_auth.registration',  # enable registration 
+    'corsheaders',   # To accept request from React
 ]
 LOCAL_APPS = [
     'damstagram.users.apps.UsersAppConfig',
@@ -140,6 +141,7 @@ AUTH_PASSWORD_VALIDATORS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -156,6 +158,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
     str(APPS_DIR.path('static')),
+    str(ROOT_DIR.path('frontend', 'build', 'static'))
 ]
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
@@ -277,3 +280,7 @@ REST_USE_JWT = True
 # TODO : Technically should not be allowed to logout and change DB by GET. 
 # Cuz if logout and changing shape of DB should be followed by POST.
 ACCOUNT_LOGOUT_ON_GET = True
+
+# SOCIALACCOUNT_QUERY_EMAIL = True
+
+CORS_ORIGIN_ALLOW_ALL = True
