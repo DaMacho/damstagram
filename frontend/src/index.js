@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import store from "redux/configureStore";
+import { ConnectedRouter } from "connected-react-router"
+import store, { history } from "redux/configureStore";
 import "index.css";
 import App from "App";
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
   </Provider>,
   document.getElementById("root")
 );
@@ -16,5 +19,3 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 // serviceWorker.unregister();
-
-localStorage.setItem("Question", "Answer");

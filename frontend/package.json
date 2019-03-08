@@ -4,10 +4,13 @@
   "private": true,
   "proxy": "http://localhost:8000",
   "dependencies": {
+    "connected-react-router": "^6.3.1",
+    "history": "^4.7.2",
     "node-sass": "^4.11.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
