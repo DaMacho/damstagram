@@ -15,7 +15,8 @@
     "reactotron-react-js": "^3.0.1",
     "redux": "^4.0.1",
     "redux-i18n": "^1.5.15",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "reset-css": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
