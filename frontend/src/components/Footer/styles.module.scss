@@ -1,11 +1,27 @@
+@import "../../config/_variables.module";
+
 .footer {
+  max-width: $max-page-width;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
   .column{
     .nav{
       .list{
-        .list-item{
-
+        display: flex;
+        .listItem{
+          margin-left: 10px;
+          color: $dark-blue;
         }
       }
+    }
+    .copyright{
+      color: $dark-gray;
     }
   }
 }
