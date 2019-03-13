@@ -1,15 +1,12 @@
-import React, { Component } from "react";
-import styles from "components/App/styles.module.scss";
-import Footer from "components/Footer";
+import { connect } from "react-redux"
+import Container from "components/App/container"
+// the App is build up based on the Container & Presenter pattern.
 
-class App extends Component {
-  render() {
-    return (
-      <div className={styles.App}>
-        <Footer />
-      </div>
-    );
+const mapStateToProps = (state, ownProps) => {
+  const { user } = state
+  return {
+    isLoggedIn: user.isLoggedIn
   }
 }
 
-export default App;
+export default connect(mapStateToProps)(Container)

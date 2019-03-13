@@ -4,7 +4,7 @@ import { connectRouter, routerMiddleware } from "connected-react-router"
 import createHistory from "history/createBrowserHistory"
 import { composeWithDevTools } from "redux-devtools-extension"
 import { i18nState } from "redux-i18n"   // for language management
-import users from "redux/modules/users"
+import user from "redux/modules/user"
 import Reactotron from "ReactotronConfig"
 
 const env = process.env.NODE_ENV
@@ -21,7 +21,7 @@ if(env === 'development'){
 
 // manage reducers, deal with various reducers
 const reducer = combineReducers({
-  users,
+  user,
   router: connectRouter(history),
   i18nState, 
 });
