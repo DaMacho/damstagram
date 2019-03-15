@@ -63,7 +63,7 @@
     align-items: center;
     color: #385185;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     svg {
       margin-right: 5px;
     }
@@ -71,5 +71,22 @@
   .forgotLink {
     font-size: $small-font-size;
     color: $dark-blue;
+  }
+  .signupHeader {
+    font-size: $small-font-size;
+    color: $dark-blue;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .terms {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    line-height: 20px;
+    color: $dark-gray;
+    span {
+      font-weight: 600;
+      cursor: pointer;
+    }
   }
 }

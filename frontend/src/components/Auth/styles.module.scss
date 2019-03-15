@@ -16,7 +16,7 @@
       margin-left: 35px;
     }
     .appBox {
-      display: felx;
+      display: flex;
       flex-direction: column;
       align-items: center;
       margin-top: 35px;
@@ -38,7 +38,7 @@
         color: $light-blue;
         cursor: pointer;
       }
-      p {
+      .text {
         margin: 15px;
       }
     }
