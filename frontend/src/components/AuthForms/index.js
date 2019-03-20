@@ -2,7 +2,7 @@ import React from "react"
 import Ionicon from "react-ionicons"
 import styles from "components/AuthForms/styles.module.scss"
 
-export const LoginForm = props =>(
+export const LoginForm = (props, context) =>(
   <div className={styles.formComponent}>
     <form className={styles.form}>
       <input type="text" placeholder="Username" className={styles.textInput} />
@@ -17,7 +17,7 @@ export const LoginForm = props =>(
   </div>
 )
 
-export const SignupForm = props => (
+export const SignupForm = (props, context) => (
   <div className={styles.formComponent}>
     <h3 className={styles.signupHeader}>Sign up to see photos and videos from your friends.</h3>
     <button className={styles.button}>
