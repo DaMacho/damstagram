@@ -1,26 +1,43 @@
+$table-width: 768px;
+$desktop-width: 875px;
+$xl-dexktop-width: 1351px;
+$phone-width: 320px;
+$iphone-width: 375px;
+$iphoneplus-width: 450px;
+
 @mixin breakpoint($point){
-    @if $point == desktop {
-        @media (min-width:70em){
+    @if $point == "tablet" {
+        @media (min-width: #{$iphoneplus-width}) and (max-width: #{$desktop-width}) {
             @content;
         }
     }
-    @else if $point == laptop {
-        @media (min-width:64em){
+    @else if $point == "tablet-landscape" {
+        @media (min-width: #{$table-width}) and (max-width: #{$desktop-width}) and (orientation: landscape) {
             @content;
         }
     }
-    @else if $point == tablet {
-        @media (min-width:50em){
+    @else if $point == "tablet-portrait" {
+        @media (min-width: #{$table-width}) and (max-width: #{$desktop-width}) and (orientation: portrait) {
             @content;
         }
     }
-    @else if $point == phablet {
-        @media (min-width:37.5em){
+    @else if $point == "phone" {
+        @media (min-width: #{$phone-width}) and (max-width: #{$iphoneplus-width}) {
             @content;
         }
     }
-    @else if $point == mobileonly {
-        @media (max-width:37.5em){
+    @else if $point == "phone-landscape" {
+        @media (min-width: #{$phone-width}) and (max-width: #{$table-width}) and (orientation: landscape) {
+            @content;
+        }
+    }
+    @else if $point == "desktop-xl" {
+        @media (min-width: #{$xl-dexktop-width}) {
+            @content;
+        }
+    }
+    @else if $point == "phone-tablet" {
+        @media (max-width: #{$desktop-width}) {
             @content;
         }
     }
