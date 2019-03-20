@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Language: kr"
+
+#: src/components/Auth/presenter.js
+msgid "Don't have an account?"
+msgstr "돈 해 번 어까운?"
+
+#: src/components/Auth/presenter.js
+#: src/components/AuthForms/index.js
+msgid "Sign up"
+msgstr "산 넙"
+
+#: src/components/Auth/presenter.js
+msgid "Have an account?"
+msgstr "해 번 어까운?"
+
+#: src/components/Auth/presenter.js
+#: src/components/AuthForms/index.js
+msgid "Log in"
+msgstr "로 긴"
+
+#: src/components/Auth/presenter.js
+msgid "Get the app"
+msgstr "게 띠 앱"
+
+#: src/components/AuthForms/index.js
+msgid "Username"
+msgstr "유저냄"
+
+#: src/components/AuthForms/index.js
+msgid "Password"
+msgstr "패스얻"
+
+#: src/components/AuthForms/index.js
+msgid "Log in with Facebook"
+msgstr "로 기 윗 빼스붘"
+
+#: src/components/AuthForms/index.js
+msgid "Forgot password?"
+msgstr "호갓 패스얻?"
+
+#: src/components/AuthForms/index.js
+msgid "Sign up to see photos and videos from your friends."
+msgstr "사 넙 트 씨 호톶 앤 비도스 펌 요 흐렌즈"
+
+#: src/components/AuthForms/index.js
+msgid "Email"
+msgstr "이멜"
+
+#: src/components/AuthForms/index.js
+msgid "Full Name"
+msgstr "훌 넴"
+
+#: src/components/AuthForms/index.js
+msgid "By signing up, you agree to our"
+msgstr "바 사닌 넙, 유 어기 투 아어"
+
+#: src/components/AuthForms/index.js
+msgid "Terms & Privacy Policy"
+msgstr "턺즈 & 프라버씨 폴리씨"
+
+#: src/components/Footer/index.js
+msgid "About Us"
+msgstr "어밧 어스"
+
+#: src/components/Footer/index.js
+msgid "Support"
+msgstr "서폸"
+
+#: src/components/Footer/index.js
+msgid "Blog"
+msgstr "블록"
+
+#: src/components/Footer/index.js
+msgid "Press"
+msgstr "프게스"
+
+#: src/components/Footer/index.js
+msgid "API"
+msgstr "아피아이"
+
+#: src/components/Footer/index.js
+msgid "Jobs"
+msgstr "죱스"
+
+#: src/components/Footer/index.js
+msgid "Privacy"
+msgstr "프라버씨"
+
+#: src/components/Footer/index.js
+msgid "Terms"
+msgstr "턺즈"
+
+#: src/components/Footer/index.js
+msgid "Directory"
+msgstr "디겍터리"
+
+#: src/components/Footer/index.js
+msgid "Language"
+msgstr "랭기지"
+

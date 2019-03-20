@@ -1,6 +1,30 @@
 export const translations = {
-  kr: {
-    "Log in": "로그인",
-    "About Us": "소개"
-  }
-};
+  'kr': {
+    'Don\'t have an account?': '돈 해 번 어까운?',
+    'Sign up': '산 넙',
+    'Have an account?': '해 번 어까운?',
+    'Log in': '로 긴',
+    'Get the app': '게 띠 앱',
+    'Username': '유저냄',
+    'Password': '패스얻',
+    'Log in with Facebook': '로 기 윗 빼스붘',
+    'Forgot password?': '호갓 패스얻?',
+    'Sign up to see photos and videos from your friends.': '사 넙 트 씨 호톶 앤 비도스 펌 요 흐렌즈',
+    'Email': '이멜',
+    'Full Name': '훌 넴',
+    'By signing up, you agree to our': '바 사닌 넙, 유 어기 투 아어',
+    'Terms & Privacy Policy': '턺즈 & 프라버씨 폴리씨',
+    'About Us': '어밧 어스',
+    'Support': '서폸',
+    'Blog': '블록',
+    'Press': '프게스',
+    'API': '아피아이',
+    'Jobs': '죱스',
+    'Privacy': '프라버씨',
+    'Terms': '턺즈',
+    'Directory': '디겍터리',
+    'Language': '랭기지',
+  },
+  'options': {
+  },
+}
