@@ -11,11 +11,11 @@ import "ReactotronConfig"
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <I18n translations={translations} initiallang="en" fallbackLang="en">
+    <I18n translations={translations} initiallang="en" fallbackLang="en">
+      <ConnectedRouter history={history}>
         <App />
-      </I18n>
-    </ConnectedRouter>
+      </ConnectedRouter>
+    </I18n>
   </Provider>,
   document.getElementById("root")
 );
