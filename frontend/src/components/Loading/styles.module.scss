@@ -1,0 +1,18 @@
+@import "../../config/_variables.module";
+
+.container{
+  .spinner{
+    margin-top: 10px;
+    height: 36px;
+    animation: spinner 1.2s steps(12) infinite;
+  }
+}
+
+@keyframes spinner{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}

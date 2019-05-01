@@ -7,6 +7,7 @@ import "components/App/styles.module.scss";
 import Footer from "components/Footer";
 import Auth from "components/Auth"
 import Navigation from "components/Navigation"
+import Feed from "components/Feed"
 
 // Making new stateless component, return array of component
 const App = props => [
@@ -24,7 +25,7 @@ App.propTypes = {
 
 const PrivateRoutes = props => (
   <Switch>
-    <Route exact path="/" render={() => "feed"} />
+    <Route exact path="/" component={Feed} />
     <Route exact path="/explore" render={() => "explore"} />
   </Switch>
 )
