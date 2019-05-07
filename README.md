@@ -17,6 +17,9 @@ pipenv
 > pipenv shell  // into the virtualenv. Enter "exit" to exit.   
 
 
+rename dbinfo.template to dbinfo.py, set user name and password
+and copy the file to damstagram/config/settings
+
 <!-- in local, Dev -->
 <!-- 
 Django is on port:8000,
