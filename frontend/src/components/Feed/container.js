@@ -11,11 +11,28 @@ class Container extends Component {
   }
   componentDidMount() {
     const { getFeed } = this.props
-    getFeed()
+    // The IF statement needs to reduce calling api 
+    // to load photo whenever reload or comeback to feed page.
+    if(!this.props.feed){
+      getFeed()
+    } else {
+      this.setState({
+        loading: false
+      })
+    }
+  }
+  componentWillReceiveProps = (nextProps) => {
+    console.log(this.props, nextProps)
+    if(nextProps.feed){
+      this.setState({
+        loading: false
+      })
+    }
   }
 
   render() {
-    return <Feed {...this.state} />
+    const { feed } = this.props
+    return <Feed {...this.state} feed={feed}/>
   }
 }
 
