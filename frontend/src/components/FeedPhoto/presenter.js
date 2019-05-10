@@ -1,10 +1,25 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styles from "components/FeedPhoto/styles.module.scss"
+import PhotoActions from "components/PhotoActions"
 
 const FeedPhoto = (props, context) => {
-  console.log(props)
-  return <div className ={styleMedia.feedPhoto}>hello!</div>
+  return <div className ={styles.feedPhoto}>
+    <header>
+      <img
+        src={props.creator.profile_image || require("images/noPhoto.png")}
+        alt={props.creator.username}
+      />
+      <div>
+        <span>{props.creator.username}</span>
+        <span>{props.location}</span>
+      </div>
+    </header>
+    <img src={props.file} alt={props.caption} />
+    <div>
+      <PhotoActions number={props.like_count} />
+    </div>
+  </div>
 }
 
 FeedPhoto.propTypes = {
