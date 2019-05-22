@@ -1,11 +1,16 @@
 @import "../../config/_variables.module";
 
-.feedPhoto{
-  @include boxBorder(yes);
-  width: 100%;
-  max-width: $max-card-width;
-  margin-bottom: 60px;
-  &:last-child {
-    margin-bottom: 0;
+.actions {
+  margin-bottom: 10px;
+  .icons {
+    margin-bottom: 5px;
+    .icon {
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+  .likes {
+    font-weight: 600;
   }
 }
